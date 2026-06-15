@@ -7,6 +7,12 @@ Yojantha bridges the gap between citizens and government welfare schemes by inte
 
 ---
 
+## 📸 Preview
+
+![Yojantha Screenshot](https://github.com/MadhulikaDamodara/Yojanta/blob/main/Screenshot%202026-06-15%20234035.png?raw=true)
+
+---
+
 ## 🚀 Features
 
 - **Personalized Recommendations** — AI-based eligibility matching across 100+ government schemes
