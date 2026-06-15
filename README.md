@@ -9,7 +9,7 @@ Yojantha bridges the gap between citizens and government welfare schemes by inte
 
 ## 📸 Preview
 
-![Yojantha Screenshot](https://github.com/MadhulikaDamodara/Yojanta/blob/main/preview.png)?raw=true)
+![Yojantha Screenshot](https://github.com/MadhulikaDamodara/Yojanta/blob/main/preview.png?raw=true)
 
 ---
 
