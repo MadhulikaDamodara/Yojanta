@@ -1,4 +1,4 @@
-# Yojantha 🇮🇳
+# Yojantha
 ### AI-Powered Access to Government Schemes
 
 Yojantha bridges the gap between citizens and government welfare schemes by intelligently matching users to schemes they're eligible for — based on their profile, income, age, gender, and category.
