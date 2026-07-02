@@ -1,0 +1,168 @@
+<svg width="680" height="720" viewBox="0 0 680 720" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Yojanta component diagram</title>
+  <desc>Shows all React frontend components, Express backend modules, MongoDB collections, and external services with their connections</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="340" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="600" fill="#1a1a1a">Yojanta — Component Diagram</text>
+
+  <!-- ── FRONTEND ─────────────────────────────── -->
+  <rect x="30" y="44" width="300" height="260" rx="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <text x="50" y="68" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#0C447C">Frontend — React.js SPA</text>
+
+  <!-- Pills row 1 -->
+  <rect x="46" y="80" width="80" height="28" rx="14" fill="#185FA5"/>
+  <text x="86" y="98" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">login.jsx</text>
+
+  <rect x="136" y="80" width="90" height="28" rx="14" fill="#185FA5"/>
+  <text x="181" y="98" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">register.jsx</text>
+
+  <rect x="236" y="80" width="80" height="28" rx="14" fill="#185FA5"/>
+  <text x="276" y="98" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">profile.jsx</text>
+
+  <!-- Pills row 2 -->
+  <rect x="46" y="120" width="104" height="28" rx="14" fill="#185FA5"/>
+  <text x="98" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">dashboard.jsx</text>
+
+  <rect x="160" y="120" width="90" height="28" rx="14" fill="#185FA5"/>
+  <text x="205" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">schemes.jsx</text>
+
+  <rect x="260" y="120" width="58" height="28" rx="14" fill="#185FA5"/>
+  <text x="289" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">tracker</text>
+
+  <!-- Pills row 3 -->
+  <rect x="46" y="160" width="88" height="28" rx="14" fill="#185FA5"/>
+  <text x="90" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">chatbot.jsx</text>
+
+  <rect x="144" y="160" width="148" height="28" rx="14" fill="#185FA5"/>
+  <text x="218" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">recommendations.jsx</text>
+
+  <!-- Infra row -->
+  <rect x="46" y="200" width="94" height="28" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="93" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#0C447C">AuthContext</text>
+
+  <rect x="150" y="200" width="76" height="28" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="188" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#0C447C">React Router</text>
+
+  <rect x="236" y="200" width="78" height="28" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/>
+  <text x="275" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#0C447C">Axios Client</text>
+
+  <rect x="46" y="242" width="270" height="48" rx="8" fill="#fff" stroke="#185FA5" stroke-width="0.5" stroke-dasharray="4 2"/>
+  <text x="181" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#0C447C" font-weight="600">Context provides JWT to all pages</text>
+  <text x="181" y="278" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#378ADD">Axios auto-attaches Bearer token on every request</text>
+
+  <!-- ── BACKEND ─────────────────────────────── -->
+  <rect x="350" y="44" width="300" height="260" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+  <text x="370" y="68" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#085041">Backend — Node.js + Express</text>
+
+  <!-- Routes row 1 -->
+  <rect x="366" y="80" width="98" height="28" rx="14" fill="#0F6E56"/>
+  <text x="415" y="98" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">authRoutes.js</text>
+
+  <rect x="474" y="80" width="108" height="28" rx="14" fill="#0F6E56"/>
+  <text x="528" y="98" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">schemeRoutes.js</text>
+
+  <!-- Routes row 2 -->
+  <rect x="366" y="120" width="82" height="28" rx="14" fill="#0F6E56"/>
+  <text x="407" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">aiRoutes.js</text>
+
+  <rect x="458" y="120" width="106" height="28" rx="14" fill="#0F6E56"/>
+  <text x="511" y="138" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">profileRoutes.js</text>
+
+  <!-- Routes row 3 -->
+  <rect x="366" y="160" width="88" height="28" rx="14" fill="#0F6E56"/>
+  <text x="410" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">Chatbot.js</text>
+
+  <rect x="464" y="160" width="120" height="28" rx="14" fill="#0F6E56"/>
+  <text x="524" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#fff">eligibilityRoute.js</text>
+
+  <!-- Services row -->
+  <rect x="366" y="200" width="126" height="28" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="429" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#085041">authMiddleware.js</text>
+
+  <rect x="502" y="200" width="132" height="28" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="568" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#085041">Eligibility Engine</text>
+
+  <rect x="366" y="242" width="102" height="28" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="417" y="258" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#085041">node-cron Job</text>
+
+  <rect x="478" y="242" width="156" height="28" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="556" y="258" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#085041">Notification Service</text>
+
+  <!-- ── Arrow: Frontend → Backend ──────────── -->
+  <line x1="330" y1="175" x2="350" y2="175" stroke="#185FA5" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+  <text x="340" y="168" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#185FA5">REST + JWT</text>
+
+  <!-- ── DATA TIER ──────────────────────────── -->
+  <rect x="30" y="330" width="300" height="140" rx="12" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+  <text x="50" y="354" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#633806">Data tier — MongoDB</text>
+
+  <rect x="46" y="366" width="128" height="52" rx="8" fill="#EF9F27" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="110" y="388" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#412402">users</text>
+  <text x="110" y="406" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#633806">profile + credentials</text>
+
+  <rect x="186" y="366" width="128" height="52" rx="8" fill="#EF9F27" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="250" y="388" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#412402">schemes</text>
+  <text x="250" y="406" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#633806">govt scheme records</text>
+
+  <rect x="46" y="430" width="268" height="30" rx="8" fill="#EF9F27" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="180" y="450" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#412402">opted_schemes + embeddings</text>
+
+  <!-- ── AI LAYER ────────────────────────────── -->
+  <rect x="350" y="330" width="300" height="140" rx="12" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+  <text x="370" y="354" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#3C3489">AI layer — Google Gemini</text>
+
+  <rect x="366" y="366" width="118" height="52" rx="8" fill="#7F77DD" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="425" y="388" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#EEEDFE">Chatbot</text>
+  <text x="425" y="406" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#CECBF6">Q&amp;A on schemes</text>
+
+  <rect x="496" y="366" width="138" height="52" rx="8" fill="#7F77DD" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="565" y="388" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#EEEDFE">Recommendations</text>
+  <text x="565" y="406" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#CECBF6">cosine similarity</text>
+
+  <rect x="366" y="430" width="268" height="30" rx="8" fill="#7F77DD" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="500" y="450" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#EEEDFE">Vector Embeddings</text>
+
+  <!-- ── EXTERNAL ────────────────────────────── -->
+  <rect x="140" y="502" width="400" height="60" rx="12" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+  <text x="340" y="524" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#2C2C2A">External — data.gov.in API</text>
+  <text x="340" y="546" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#5F5E5A">Government open data · daily cron sync · JSON normalization</text>
+
+  <!-- Arrows: Backend → Data -->
+  <line x1="430" y1="304" x2="250" y2="330" stroke="#0F6E56" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+  <text x="310" y="316" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#0F6E56">Mongoose ODM</text>
+
+  <!-- Arrows: Backend → AI -->
+  <line x1="500" y1="304" x2="500" y2="330" stroke="#534AB7" stroke-width="1.5" marker-end="url(#arrow-purple)"/>
+  <text x="520" y="320" font-family="Arial,sans-serif" font-size="9" fill="#534AB7">Gemini calls</text>
+
+  <!-- Arrows: cron → external -->
+  <line x1="417" y1="270" x2="340" y2="502" stroke="#5F5E5A" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+  <text x="356" y="420" font-family="Arial,sans-serif" font-size="9" fill="#5F5E5A">daily sync</text>
+
+  <!-- ── LEGEND ─────────────────────────────── -->
+  <rect x="30" y="582" width="620" height="52" rx="8" fill="#f9f9f9" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="46" y="598" width="12" height="12" rx="3" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <text x="64" y="609" font-family="Arial,sans-serif" font-size="11" fill="#444">Frontend</text>
+  <rect x="136" y="598" width="12" height="12" rx="3" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+  <text x="154" y="609" font-family="Arial,sans-serif" font-size="11" fill="#444">Backend</text>
+  <rect x="226" y="598" width="12" height="12" rx="3" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+  <text x="244" y="609" font-family="Arial,sans-serif" font-size="11" fill="#444">Database</text>
+  <rect x="316" y="598" width="12" height="12" rx="3" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+  <text x="334" y="609" font-family="Arial,sans-serif" font-size="11" fill="#444">AI Layer</text>
+  <rect x="396" y="598" width="12" height="12" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+  <text x="414" y="609" font-family="Arial,sans-serif" font-size="11" fill="#444">External</text>
+</svg>

@@ -1,0 +1,38 @@
+[
+  {
+    "user_name": "ananya_sharma",
+    "email": "ananya@example.com",
+    "password": "HashedPassword_UseBcrypt",
+    "name": "Ananya Sharma",
+    "dob": "2002-05-15",
+    "gender": "Female",
+    "income": 250000,
+    "occupation": "Student",
+    "state": "Andhra Pradesh",
+    "category": "OBC"
+  },
+  {
+    "user_name": "ravi_kumar",
+    "email": "ravi@example.com",
+    "password": "HashedPassword_UseBcrypt",
+    "name": "Ravi Kumar",
+    "dob": "1985-08-20",
+    "gender": "Male",
+    "income": 120000,
+    "occupation": "Farmer",
+    "state": "Telangana",
+    "category": "SC"
+  },
+  {
+    "user_name": "priya_nair",
+    "email": "priya@example.com",
+    "password": "HashedPassword_UseBcrypt",
+    "name": "Priya Nair",
+    "dob": "1995-03-10",
+    "gender": "Female",
+    "income": 450000,
+    "occupation": "Self-Employed",
+    "state": "Kerala",
+    "category": "General"
+  }
+]

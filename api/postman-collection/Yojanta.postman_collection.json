@@ -1,0 +1,217 @@
+{
+  "info": {
+    "name": "Yojanta API",
+    "description": "Complete Postman collection for the Yojanta REST API. Import this file into Postman to test all endpoints.\n\nSetup:\n1. Import this collection\n2. Set collection variable: base_url = http://localhost:5000/api\n3. Run 'Register' or 'Login' first → copy the token\n4. Set collection variable: token = <your_jwt_token>\n5. All protected routes will auto-use the token",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:5000/api", "type": "string" },
+    { "key": "token", "value": "", "type": "string" },
+    { "key": "scheme_id", "value": "", "type": "string" },
+    { "key": "opted_id", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "1. Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/auth/register",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_name\": \"testuser123\",\n  \"email\": \"test@example.com\",\n  \"password\": \"Test@1234\",\n  \"name\": \"Test User\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var json = pm.response.json();",
+                  "if (json.token) {",
+                  "  pm.collectionVariables.set('token', json.token);",
+                  "  console.log('Token saved automatically');",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/auth/login",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Test@1234\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. User Profile",
+      "item": [
+        {
+          "name": "Get My Profile",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/users/profile",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }]
+          }
+        },
+        {
+          "name": "Update My Profile",
+          "request": {
+            "method": "PUT",
+            "url": "{{base_url}}/users/profile",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"dob\": \"2002-05-15\",\n  \"gender\": \"Female\",\n  \"income\": 250000,\n  \"occupation\": \"Student\",\n  \"state\": \"Andhra Pradesh\",\n  \"category\": \"OBC\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Schemes",
+      "item": [
+        {
+          "name": "Get All Schemes",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/schemes",
+              "host": ["{{base_url}}"],
+              "path": ["schemes"],
+              "query": [
+                { "key": "category", "value": "Education", "disabled": true },
+                { "key": "gender", "value": "Female", "disabled": true },
+                { "key": "search", "value": "scholarship", "disabled": true }
+              ]
+            },
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }]
+          }
+        },
+        {
+          "name": "Get Scheme by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/schemes/{{scheme_id}}",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }]
+          }
+        },
+        {
+          "name": "Add New Scheme (Admin)",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/schemes",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scheme_name\": \"Test Scheme\",\n  \"category\": \"Education\",\n  \"department\": \"Ministry of Education\",\n  \"min_income\": 0,\n  \"max_income\": 800000,\n  \"min_age\": 18,\n  \"max_age\": 35,\n  \"deadline\": \"2026-12-31\",\n  \"documents\": [\"Aadhar Card\", \"Income Certificate\"],\n  \"gender\": \"All\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Scheme (Admin)",
+          "request": {
+            "method": "PUT",
+            "url": "{{base_url}}/schemes/{{scheme_id}}",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deadline\": \"2027-03-31\",\n  \"max_income\": 900000\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Eligibility",
+      "item": [
+        {
+          "name": "Get My Eligible Schemes",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/eligibility",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }]
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Application Tracker",
+      "item": [
+        {
+          "name": "Opt Into a Scheme",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var json = pm.response.json();",
+                  "if (json.opted_scheme && json.opted_scheme._id) {",
+                  "  pm.collectionVariables.set('opted_id', json.opted_scheme._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/opted",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scheme_id\": \"{{scheme_id}}\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get My Opted Schemes",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/opted",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }]
+          }
+        },
+        {
+          "name": "Update Application Status",
+          "request": {
+            "method": "PUT",
+            "url": "{{base_url}}/opted/{{opted_id}}",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"applied\"\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
