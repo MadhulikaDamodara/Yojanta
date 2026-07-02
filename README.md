@@ -400,6 +400,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 🔮 Future Enhancements
 
 - [ ] **Multilingual Support** — Hindi, Tamil, Telugu, Kannada, Marathi
+- [ ] **AI Chatbot** — LLM-powered scheme assistant for Q&A and guidance
 - [ ] **Document Upload & Verification** — automated OCR + document checklist
 - [ ] **Aadhar / DigiLocker Integration** — pre-fill profile data from official sources
 - [ ] **Mobile App** — React Native for Android/iOS
